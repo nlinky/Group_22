@@ -1,11 +1,13 @@
-Задание: 1
+https://www.sql-ex.ru/
+----------------------------------------------------------------------
+Task: 1
 
 SELECT model, speed, hd
 FROM PC
 WHERE price < 500
 
 ----------------------------------------------------------------------
-Задание: 2
+Task: 2
 
 SELECT DISTINCT maker
 FROM Product
