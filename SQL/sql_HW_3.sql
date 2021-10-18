@@ -1,22 +1,22 @@
- 1. Создайте базу из представленной картинки - HW_3.jpg
-      - У каждой таблицы должно быть поле id
-      - id автоинкрементальный и является первичным ключом
+-- 1. Создайте базу из представленной картинки - HW_3.jpg
+--      - У каждой таблицы должно быть поле id
+--      - id автоинкрементальный и является первичным ключом
 
-	1.1 Таблица roles:
+--	1.1 Таблица roles:
 
 	create table roles (
 		id serial primary key,
 		role_title varchar (50) unique not null
 	);
 
-	1.2 Таблица salary:
+--	1.2 Таблица salary:
 
 	create table salary (
 		id serial primary key,
 		monthly_salary int not null
 	);
 
-	1.3 Таблица roles_salary:
+--	1.3 Таблица roles_salary:
 
 	create table roles_salary (
 		id serial primary key,
@@ -28,14 +28,14 @@
 			references salary (id)
 	);
 
-	1.4 Таблица employees:
+--	1.4 Таблица employees:
 
 	create table employees (
 		id serial primary key,
 		employee_name varchar(50) not null
 	);
 
-	1.5 Таблица employees_roles:
+--	1.5 Таблица employees_roles:
 
 	create table employees_roles (
 		id serial primary key,
@@ -47,7 +47,7 @@
 			references employees (id)
 	);
 
-	1.6 Таблица Service:
+--	1.6 Таблица Service:
 
 	create table Service (
 		id serial primary key,
@@ -55,7 +55,7 @@
 		price int not null
 	);
 
-	1.7 Таблица materials:
+--	1.7 Таблица materials:
 
 	create table materials (
 		id serial primary key,
@@ -64,7 +64,7 @@
 		price int not null
 	);
 
-	1.8 Таблица claim:
+--	1.8 Таблица claim:
 
 	create table claim (
 		id serial primary key,
@@ -83,9 +83,9 @@
 			references employees (id)
 	);
 
- 2. Заполните таблицы данными. Не менее 10 строк в каждой таблице.
+-- 2. Заполните таблицы данными. Не менее 10 строк в каждой таблице.
 
-	2.1 Заполнение таблицы roles:
+--	2.1 Заполнение таблицы roles:
 
 	insert into roles (id, role_title) values 
 	(default, 'Junior Manual QA engineer'),
@@ -99,7 +99,7 @@
 	(default, 'Senior Java developer'),
 	(default, 'Project Manager');
 
-	2.2 Заполнение таблицы salary:
+--	2.2 Заполнение таблицы salary:
 
 	insert into salary (id, monthly_salary) values 
 	(default, 1100), 
@@ -113,7 +113,7 @@
 	(default, 2750), 
 	(default, 2600);
 
-	2.3 Заполнение таблицы roles_salary:
+--	2.3 Заполнение таблицы roles_salary:
 
 	insert into roles_salary (id, id_role, id_salary) values 
 	(default, 2, 1),
@@ -132,7 +132,7 @@
 	(default, 8, 9), 
 	(default, 3, 1);
 
-	2.4 Заполнение таблицы employees:
+--	2.4 Заполнение таблицы employees:
 
 	insert into employees (id, employee_name) values 
 	(default, 'Nadya'),
@@ -151,7 +151,7 @@
 	(default, 'Anna'),
 	(default, 'Masha');
 
-	2.5 Заполнение таблицы employees_roles:
+--	2.5 Заполнение таблицы employees_roles:
 
 	insert into employees_roles (id, id_role, id_employee) values 
 	(default, 2, 3),
@@ -170,7 +170,7 @@
 	(default, 8, 2), 
 	(default, 3, 1);
 
-	2.6 Заполнение таблицы Service:
+--	2.6 Заполнение таблицы Service:
 
 	insert into Service (id, service_title, price) values 
 	(default, 'requirements testing', 200),
@@ -184,7 +184,7 @@
 	(default, 'unit testing', 500),
 	(default, 'creating a database', 450);
 
-	2.7 Заполнение таблицы materials:
+--	2.7 Заполнение таблицы materials:
 
 	insert into materials (id, material_title, amount, price) values 
 	(default, 'paper', 1000, 10),
@@ -198,7 +198,7 @@
 	(default, 'postgres', 5, 0),
 	(default, 'phone', 3, 1000);
 
-	2.8 Заполнение таблицы claim:
+--	2.8 Заполнение таблицы claim:
 
 	insert into claim (id, service_id, employee_id, material_id, claim_date, sales_manager) values 
 	(default, 1, 11, 1, '2021-10-21', 2),
@@ -212,14 +212,14 @@
 	(default, 9, 8, 9, '2022-01-25', 10),
 	(default, 10, 9, 10, '2021-11-25', 11);
 
- 3. Добавить таблицу Suppliers с полями id, name.
+-- 3. Добавить таблицу Suppliers с полями id, name.
 
 	create table Suppliers (
 		id serial primary key,
 		name varchar (50) not null
 	);
 
- 4. Добавить 10 строк поставщиков в таблицу Suppliers.
+-- 4. Добавить 10 строк поставщиков в таблицу Suppliers.
 
 	insert into Suppliers (id, name) values 
 	(default, 'SvetoCopy'),
@@ -233,20 +233,20 @@
 	(default, 'Postgres Professional'),
 	(default, 'Xiaomi Redmi');
 
- 5. Обновить таблицу Materials. Добавить поле suplier_id которое связано с полем id в таблице Suppliers.
+-- 5. Обновить таблицу Materials. Добавить поле suplier_id которое связано с полем id в таблице Suppliers.
 
 	alter table materials add column suplier_id int;
 
 	alter table materials add foreign key (suplier_id)
 		references Suppliers (id);
 
- 6. Обновить таблицу Employees. Добавить varchar поле surname на 50 символов.
+-- 6. Обновить таблицу Employees. Добавить varchar поле surname на 50 символов.
 
 	alter table employees add column surname varchar (50);
 
- 7. Обновить таблицу Salary. Добавить varchar поле currency на 7 символов.
+-- 7. Обновить таблицу Salary. Добавить varchar поле currency на 7 символов.
 
 	alter table salary add column currency varchar (7);
 
 ---------------------------------------------------------------------------------------
-Результат - HW_3_diagram.png
+-- Результат - HW_3_diagram.png
