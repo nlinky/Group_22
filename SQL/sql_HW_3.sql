@@ -1,4 +1,6 @@
  1. Создайте базу из представленной картинки - HW_3.jpg
+<a href="https://github.com/nlinky/Group_22/blob/SQL/SQL/HW_3.jpg" rel="nofollow" target="_blank">HW_3.jpg</a>
+
       - У каждой таблицы должно быть поле id
       - id автоинкрементальный и является первичным ключом
 
