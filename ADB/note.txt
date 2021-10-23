@@ -1,0 +1,34 @@
+https://gist.github.com/Pulimet/5013acf2cd5b28e55036c82c91bd56d8
+https://developer.android.com/studio/releases/platform-tools
+
+Зайти в папку adb - 
+cd /d/Course_1/Adb/platform-tools 
+или
+cd C:/Users/Cherv/AppData/Local/Android/Sdk/platform-tools
+
+./adb devices - все девайсы подключенные
+
+./adb install D:/Telegram/001_ToDoList-master/001_ToDoList-master/app/build/outputs/apk/debug/app-debug.apk - установка 
+приложения, нужно указать его путь
+
+./adb shell pm list packages - список всех приложений, где они лежат
+
+./adb shell pm list packages | grep todolist - найти приложение по слову
+
+./adb uninstall com.android.todolist - удаление приложения
+
+./adb shell screencap storage/emulated/0/DCIM/group_22.png - делаем скриншот на телефон
+
+./adb pull storage/emulated/0/DCIM/group_22.png D:/image/group_22.png - заливаем картинку на комп с телефона прописываем 
+путь на телефоне на комп  
+
+./adb push D:/image/java/12.jpg /storage/emulated/0/DCIM/group_22_1.jpg - с компа на телефон
+
+./adb logcat - вывод логов
+Ctrl + C
+
+логи - это текстовый файл в который пишется любое действие, которое программисты сказали туда писать
+
+./adb logcat | grep -rnw "todolist" - вывод логов по названию приложения
+
+./adb logcat | grep -rnw "todolist" > D:/todolist.log - запись логов по данному приложению в файл
