@@ -242,6 +242,17 @@ WHERE speed < ALL (SELECT speed FROM PC);
 type	model	speed
 Laptop	1298	350
 ----------------------------------------------------------------------
+Задание: 18
+Найдите производителей самых дешевых цветных принтеров. Вывести: maker, price
+
+SELECT DISTINCT maker, price
+FROM Printer INNER JOIN Product ON Product.model = Printer.model
+WHERE color = 'y' AND price = (SELECT MIN(price) 
+FROM Printer 
+WHERE color = 'y');
+
+maker	price
+D	270.0000
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
