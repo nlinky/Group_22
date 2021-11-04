@@ -231,7 +231,28 @@ model	model	speed	ram
 1233	1232	500	64
 1260	1232	500	32
 ----------------------------------------------------------------------
+Задание: 17
+Найдите модели ПК-блокнотов, скорость которых меньше скорости каждого из ПК.
+Вывести: type, model, speed
+
+SELECT DISTINCT type, Laptop.model, speed
+FROM Laptop INNER JOIN Product ON Product.model = Laptop.model
+WHERE speed < ALL (SELECT speed FROM PC);
+
+type	model	speed
+Laptop	1298	350
 ----------------------------------------------------------------------
+Задание: 18
+Найдите производителей самых дешевых цветных принтеров. Вывести: maker, price
+
+SELECT DISTINCT maker, price
+FROM Printer INNER JOIN Product ON Product.model = Printer.model
+WHERE color = 'y' AND price = (SELECT MIN(price) 
+FROM Printer 
+WHERE color = 'y');
+
+maker	price
+D	270.0000
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
