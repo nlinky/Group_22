@@ -61,6 +61,22 @@ WHERE price < 500;
 |----------------|:---------:|----------------:|
 | По левому краю | По центру | По правому краю |
 | текст | текст | текст |
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
+| Command | Description |
+| --- | --- |
+| git status | List all new or modified files |
+| git diff | Show file differences that haven't been staged |
+
+| Name     | Character |
+| ---      | ---       |
+| Backtick | `         |
+| Pipe     | \|        |
+
 ----------------------------------------------------------------------
 Задание: 2
 Найдите производителей принтеров. Вывести: maker
