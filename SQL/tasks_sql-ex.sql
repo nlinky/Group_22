@@ -50,33 +50,11 @@ SELECT model, speed, hd
 FROM PC
 WHERE price < 500;
 
-| model | speed | hd |
-|------:|:-----:|---:|
-| 1232 | 500 | 10.0 |
-| 1232 | 450 | 8.0 |
-| 1232 | 450 | 10.0 |
-| 1260 | 500 | 10.0 |
-
-| LEFT | CENTER | RIGHT |
-|----------------|:---------:|----------------:|
-| По левому краю | По центру | По правому краю |
-| текст | текст | текст |
-
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-
-| Command | Description |
-| --- | --- |
-| git status | List all new or modified files |
-| git diff | Show file differences that haven't been staged |
-
-| Name     | Character |
-| ---      | ---       |
-| Backtick | `         |
-| Pipe     | \|        |
-
+ model speed hd 
+ 1232  500  10.0 
+ 1232  450  8.0 
+ 1232  450  10.0
+ 1260  500  10.0 
 ----------------------------------------------------------------------
 Задание: 2
 Найдите производителей принтеров. Вывести: maker
