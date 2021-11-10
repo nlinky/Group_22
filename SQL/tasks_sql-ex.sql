@@ -306,4 +306,20 @@ speed	avg_price
 800	970.0000
 900	980.0000
 ----------------------------------------------------------------------
+Задание: 23
+Найдите производителей, которые производили бы как ПК
+со скоростью не менее 750 МГц, так и ПК-блокноты со скоростью не менее 750 МГц.
+Вывести: Maker
+
+SELECT maker FROM PC
+INNER JOIN Product ON PC.model = Product.model
+WHERE speed >= 750
+INTERSECT
+SELECT maker FROM Laptop
+INNER JOIN Product ON Laptop.model = Product.model
+WHERE speed >= 750;
+
+maker
+A
+B
 ----------------------------------------------------------------------
