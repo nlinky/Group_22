@@ -306,4 +306,40 @@ speed	avg_price
 800	970.0000
 900	980.0000
 ----------------------------------------------------------------------
+Задание: 23
+Найдите производителей, которые производили бы как ПК
+со скоростью не менее 750 МГц, так и ПК-блокноты со скоростью не менее 750 МГц.
+Вывести: Maker
+
+SELECT maker FROM PC
+INNER JOIN Product ON PC.model = Product.model
+WHERE speed >= 750
+INTERSECT
+SELECT maker FROM Laptop
+INNER JOIN Product ON Laptop.model = Product.model
+WHERE speed >= 750;
+
+maker
+A
+B
 ----------------------------------------------------------------------
+Задание: 25
+Найдите производителей принтеров, которые производят ПК с наименьшим объемом RAM и с самым быстрым процессором среди всех ПК, имеющих наименьший объем RAM. Вывести: Maker
+
+SELECT DISTINCT maker 
+FROM Product 
+WHERE model IN (SELECT model FROM PC
+  WHERE ram IN (SELECT MIN(ram) FROM pc)
+  AND 
+  speed IN (SELECT MAX(speed) FROM PC
+  WHERE ram IN (SELECT MIN(ram) FROM PC))
+)
+AND
+maker IN (SELECT maker FROM Product
+  WHERE type = 'Printer');
+
+maker
+A
+E
+----------------------------------------------------------------------
+
