@@ -342,4 +342,14 @@ maker
 A
 E
 ----------------------------------------------------------------------
+Задание: 31
+Для классов кораблей, калибр орудий которых не менее 16 дюймов, укажите класс и страну.
 
+SELECT DISTINCT class, country
+FROM Classes 
+WHERE bore >= 16;
+
+class		country
+Iowa		USA
+North Carolina	USA
+Yamato		Japan
