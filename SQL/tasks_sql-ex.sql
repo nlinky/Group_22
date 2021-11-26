@@ -353,3 +353,14 @@ class		country
 Iowa		USA
 North Carolina	USA
 Yamato		Japan
+----------------------------------------------------------------------
+Задание: 33
+Укажите корабли, потопленные в сражениях в Северной Атлантике (North Atlantic). Вывод: ship.
+
+SELECT ship
+FROM Outcomes 
+WHERE battle = 'North Atlantic' AND result = 'sunk';
+
+ship
+Bismarck
+Hood
