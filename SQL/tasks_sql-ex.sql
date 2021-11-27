@@ -364,3 +364,22 @@ WHERE battle = 'North Atlantic' AND result = 'sunk';
 ship
 Bismarck
 Hood
+----------------------------------------------------------------------
+Задание: 36
+Перечислите названия головных кораблей, имеющихся в базе данных (учесть корабли в Outcomes).
+
+SELECT DISTINCT name
+FROM Ships INNER JOIN Classes ON Classes.class = Ships.name
+UNION
+SELECT DISTINCT ship
+FROM Outcomes INNER JOIN Classes ON Outcomes.ship = Classes.class;
+
+name
+Bismarck
+Iowa
+Kongo
+North Carolina
+Renown
+Revenge
+Tennessee
+Yamato
