@@ -398,3 +398,18 @@ WHERE type = 'bc';
 country
 Gt.Britain
 Japan
+----------------------------------------------------------------------
+Задание: 42
+Найдите названия кораблей, потопленных в сражениях, и название сражения, в котором они были потоплены.
+
+SELECT ship, battle
+FROM Outcomes
+WHERE result = 'sunk';
+
+ship		battle
+Bismarck	North Atlantic
+Fuso		Surigao Strait
+Hood		North Atlantic
+Kirishima	Guadalcanal
+Schamhorst	North Cape
+Yamashiro	Surigao Strait
