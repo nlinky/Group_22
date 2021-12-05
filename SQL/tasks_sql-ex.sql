@@ -413,3 +413,24 @@ Hood		North Atlantic
 Kirishima	Guadalcanal
 Schamhorst	North Cape
 Yamashiro	Surigao Strait
+----------------------------------------------------------------------
+Задание: 44 
+Найдите названия всех кораблей в базе данных, начинающихся с буквы R.
+
+SELECT name 
+FROM Ships 
+WHERE name LIKE 'R%'
+UNION 
+SELECT ship
+FROM Outcomes 
+WHERE ship LIKE 'R%'
+
+name
+Ramillies
+Renown
+Repulse
+Resolution
+Revenge
+Rodney
+Royal Oak
+Royal Sovereign
